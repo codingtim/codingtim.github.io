@@ -37,7 +37,7 @@ Now how can this be improved?
 
 We can use the Iterator pattern to split the business logic and the looping logic. 
 
-First we create a new data source interface that returns an Iterator instaed of a List.
+First we create a new data source interface that returns an Iterator instead of a List.
 
 {% gist codingtim/f359a87ccb9f173b2a641983e3ef6e5f %}
 
