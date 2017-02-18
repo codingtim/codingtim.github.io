@@ -3,7 +3,6 @@ title: "Using the Iterator pattern to query for data."
 tags:
   - java
   - design
-published: false
 ---
 
 Everyone knows the Iterator interface in Java but outside the Collections of java the pattern is not often used.
@@ -38,4 +37,14 @@ Now how can this be improved?
 
 We can use the Iterator pattern to split the business logic and the looping logic. 
 
+First we create a new data source interface that returns an Iterator instaed of a List.
 
+{% gist codingtim/f359a87ccb9f173b2a641983e3ef6e5f %}
+
+The Iterator can be backed by a paged implementation similar to the one before. 
+
+{% gist codingtim/bb5ad37e2b57c782a03036b20230faa7 %}
+
+Lastly the user of the interface can now focus on business logic instead of both the paging and the business logic.
+
+{% gist codingtim/55bd6ecbc158fcdebe9cef6aeb4a0e8f %}
