@@ -10,7 +10,9 @@ Revocation checking is disabled by default in Java but it can be enabled by sett
 
 To better understand what Java is doing under the covers during the SSL handshake, debug logging can be enabled with the following system properties:
 
-    -Djavax.net.debug=all -Djava.security.debug=certpath
+```
+-Djavax.net.debug=all -Djava.security.debug=certpath
+```
 
 The following test tries to connect with a server that uses a revoked certifcate. 
 
@@ -21,10 +23,13 @@ No exception is thrown as the default config does not do revocation checking.
 The debug logging of the certpath shows 7 checkers but no instance of RevocationChecker.
 Enabling the revocation checking with the following properties will make the test succeed: 
 
-    System.setProperty("com.sun.net.ssl.checkRevocation", "true");
-    Security.setProperty("ocsp.enable", "true");
+```
+System.setProperty("com.sun.net.ssl.checkRevocation", "true");
+Security.setProperty("ocsp.enable", "true");
+```
     
-The dbug logging now shows an additional checker of type RevocationChecker.
+The debug logging now shows an additional checker of type RevocationChecker.
+This checker uses the configured ocsp to find out the certificate has been revoked.
 
 Note that the ocsp.enable property is a Security property. 
 It is only possible to set this programmatically or through the java.security file that is by default located in the java installation directory.
