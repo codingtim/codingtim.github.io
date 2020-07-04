@@ -1,5 +1,5 @@
 ---
-title: "How to enable SSL revocation checking."
+title: "How to enable Java SSL revocation checking."
 tags:
   - java
   - ssl
