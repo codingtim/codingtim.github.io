@@ -19,6 +19,7 @@ Amazon decided to re-enable TLS 1.0 and 1.1 by default. This can be found in the
 
 - [Java 11](https://github.com/corretto/corretto-11/blob/release-11.0.11.9.1/CHANGELOG.md#corretto-version-1101191)
 - [Java 8](https://github.com/corretto/corretto-8/blob/release-8.292.10.1/CHANGELOG.md#corretto-version-8292101)
+- [Java 16](https://github.com/corretto/corretto-jdk/blob/8ef5cb4bef6842453c491f19a83e2251827c5829/src/java.base/share/conf/security/java.security#L732) disables TLS 1.0 and 1.1 by default.
 
 ## Azul Community 
 
